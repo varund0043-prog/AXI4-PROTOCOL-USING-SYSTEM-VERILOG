@@ -21,7 +21,7 @@ BURST_LEN = 4
 
 MEM_DEPTH = 256
 
-Interface (axi_if.sv)
+**Interface (axi_if.sv)**
 Defines AXI4 protocol signals:
 
 Write Address Channel (AW)
@@ -36,7 +36,7 @@ Read Data Channel (R)
 
 Includes modports for master and slave connections
 
-Master Module (axi_master.sv)
+**Master Module (axi_master.sv)**
 Implements AXI4 master functionality
 
 Finite State Machine with states:
@@ -47,7 +47,7 @@ Generates sequential write data (incrementing pattern)
 
 Includes protocol assertions for validation
 
-Slave Module (axi_slave.sv)
+**Slave Module (axi_slave.sv)**
 Implements AXI4 slave with memory storage
 
 Handles write and read operations
@@ -56,7 +56,7 @@ Supports error injection for response testing
 
 256-depth memory array for data storage
 
-Verification Components
+**Verification Components**
 Scoreboard (scoreboard.sv)
 Tracks written and read data using queues
 
@@ -64,7 +64,7 @@ Provides data comparison functionality
 
 Generates pass/fail reports
 
-Assertions (assert_axi.sv)
+**Assertions (assert_axi.sv)**
 Validates protocol compliance:
 
 WLAST timing correctness
@@ -73,7 +73,7 @@ Handshake protocol adherence
 
 Address stability during transactions
 
-Coverage (coverage.sv)
+**Coverage (coverage.sv)**
 Functional coverage tracking:
 
 FSM state coverage
@@ -84,7 +84,7 @@ Burst length coverage
 
 Response type coverage
 
-Testbench (tb_top.sv)
+**Testbench (tb_top.sv)**
 Instantiates master, slave, and verification components
 
 Connects scoreboard to monitor transactions
@@ -113,7 +113,7 @@ All write-read comparisons passed
 
 Scoreboard report: "All data matched. Test PASSED"
 
-Coverage Achieved
+**Coverage Achieved**
 FSM state transitions covered
 
 Multiple burst lengths tested
